@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O-RADS™ Ultrasound Analyzer | AI Medical Imaging</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- PDF & QR libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with language selector -->
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">🎗️</span>
+                <span class="logo-text" data-i18n="app_title">O‑RADS Analyzer</span>
+            </div>
+            <div class="header-actions">
+                <select id="languageSelect" class="language-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+                <button id="themeToggle" class="icon-btn" data-i18n="theme_toggle">🌓</button>
+            </div>
+        </header>
+
+        <!-- Description section -->
+        <div class="description-section">
+            <p data-i18n="description">Upload an ultrasound image and our AI will compute the O‑RADS score...</p>
+        </div>
+
+        <!-- Main 2-column layout (unchanged) -->
+        <div class="main-grid">
+            <div class="content-panel">
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📸</div>
+                        <p data-i18n="upload_area_text">Drag & drop an ultrasound image here<br>or click to browse</p>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/jpg" style="display:none">
+                        <button class="btn-primary" id="selectBtn" data-i18n="select_btn">Select Image</button>
+                    </div>
+                    <div id="previewContainer" class="preview hidden">
+                        <img id="previewImage" alt="Preview">
+                        <button class="btn-danger" id="clearBtn" data-i18n="clear_btn">Clear</button>
+                    </div>
+                </div>
+
+                <!-- Progress steps -->
+                <div id="progressSteps" class="progress-steps hidden">
+                    <div class="step" id="stepUpload" data-i18n="step_upload">1. Upload</div>
+                    <div class="step" id="stepFeatures" data-i18n="step_features">2. Feature extraction</div>
+                    <div class="step" id="stepAnalysis" data-i18n="step_analysis">3. O‑RADS analysis</div>
+                    <div class="step" id="stepReport" data-i18n="step_report">4. Generating report</div>
+                </div>
+
+                <div id="results" class="results hidden"></div>
+            </div>
+
+            <div class="sidebar-panel">
+                <div class="history-card">
+                    <div class="card-header">
+                        <h3 data-i18n="history_header">📋 Analysis History</h3>
+                        <button id="exportCsvBtn" class="btn-outline small" data-i18n="export_csv">Export CSV</button>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-history" data-i18n="empty_history">No analyses yet. Upload an image.</p>
+                    </div>
+                </div>
+
+                <div class="chat-card">
+                    <div class="card-header">
+                        <h3 data-i18n="chat_header">💬 AI Assistant</h3>
+                        <span class="badge">Groq</span>
+                    </div>
+                    <div id="chatMessages" class="chat-messages"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" data-i18n="chat_placeholder" placeholder="Ask about the results...">
+                        <button id="sendChatBtn" class="btn-primary small" data-i18n="send_btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Education Library: Horizontal videos at bottom -->
+        <div class="education-library">
+            <h2 data-i18n="education_header">📚 Patient Education Library</h2>
+            <div class="video-row">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/kk0iQ9FBSUU" title="O-RADS scores" frameborder="0" allowfullscreen></iframe>
+                    <p data-i18n="video1_title">What are O‑RADS scores?</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/zsWzTsrRICc" title="Ovarian cysts explained" frameborder="0" allowfullscreen></iframe>
+                    <p data-i18n="video2_title">Ovarian Cysts Explained</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/1czt7IhRLTY" title="When is a cyst a problem?" frameborder="0" allowfullscreen></iframe>
+                    <p data-i18n="video3_title">When is a cyst a problem?</p>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/XA40UC9fnvs" title="types of ovarian cyst" frameborder="0" allowfullscreen></iframe>
+                    <p data-i18n="video4_title">Understanding cyst types</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

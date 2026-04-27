@@ -1,0 +1,22 @@
+{
+  "app_title": "O‑RADS Ultrasound Analyzer",
+  "tagline": "AI-powered risk assessment for ovarian cysts",
+  "description": "Upload an ultrasound image and our AI will compute the O‑RADS score (1-5) and provide clinical features, risk assessment, and a conversational assistant. Your data stays private - no cloud storage.",
+  "education_header": "📚 Patient Education Library",
+  "video1_title": "What are O‑RADS scores?",
+  "video2_title": "Ovarian Cysts Explained",
+  "video3_title": "When is a cyst a problem?",
+  "video4_title": "Understanding cyst types",
+  "upload_area_text": "Drag & drop an ultrasound image here<br>or click to browse",
+  "select_btn": "Select Image",
+  "clear_btn": "Clear",
+  "history_header": "📋 Analysis History",
+  "export_csv": "Export CSV",
+  "chat_header": "💬 AI Assistant",
+  "chat_placeholder": "Ask about the results...",
+  "send_btn": "Send",
+  "download_pdf": "📄 Download PDF Report",
+  "qr_code_label": "Scan QR code to view this analysis on your phone",
+  "theme_toggle": "🌓",
+  "language": "Language"
+}

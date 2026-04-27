@@ -1,0 +1,22 @@
+{
+  "app_title": "Analizador de Ultrasonido O‑RADS",
+  "tagline": "Evaluación de riesgos asistida por IA para quistes ováricos",
+  "description": "Sube una imagen de ultrasonido y nuestra IA calculará la puntuación O‑RADS (1-5) y proporcionará características clínicas, evaluación de riesgo y un asistente conversacional. Tus datos se mantienen privados - no hay almacenamiento en la nube.",
+  "education_header": "📚 Biblioteca de Educación para Pacientes",
+  "video1_title": "¿Qué son las puntuaciones O‑RADS?",
+  "video2_title": "Quistes ováricos explicados",
+  "video3_title": "¿Cuándo es problemático un quiste?",
+  "video4_title": "Tipos de quistes",
+  "upload_area_text": "Arrastra y suelta una imagen de ultrasonido aquí<br>o haz clic para buscar",
+  "select_btn": "Seleccionar Imagen",
+  "clear_btn": "Limpiar",
+  "history_header": "📋 Historial de Análisis",
+  "export_csv": "Exportar CSV",
+  "chat_header": "💬 Asistente IA",
+  "chat_placeholder": "Pregunta sobre los resultados...",
+  "send_btn": "Enviar",
+  "download_pdf": "📄 Descargar Informe PDF",
+  "qr_code_label": "Escanea el código QR para ver este análisis en tu teléfono",
+  "theme_toggle": "🌓",
+  "language": "Idioma"
+}
